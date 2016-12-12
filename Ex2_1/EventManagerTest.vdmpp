@@ -1,0 +1,56 @@
+class EventManagerTest
+types
+-- TODO Define types here
+
+values
+-- TODO Define values here
+
+instance variables
+private manager : EventManager := new EventManager(3);
+
+operations
+public test1 : () ==> ()
+test1() == (
+	manager.ユーザ登録(1);
+	manager.ユーザ登録(2);
+	manager.ユーザ登録(3);
+	manager.ユーザ登録(4);
+);
+
+public test2 : () ==> EventManager`「ユーザID」
+test2() == (
+	def u2 : EventManager`「ユーザID」 = 2;
+	    u3 : EventManager`「ユーザID」 = 3
+		in (
+			return manager.参加登録({u2, u3});
+		)
+);
+
+public test3 : () ==> EventManager`「ユーザID」
+test3() == (
+	def u2 : EventManager`「ユーザID」 = 2;
+	    u3 : EventManager`「ユーザID」 = 3
+		in (
+			manager.ユーザ登録(u3);
+			return manager.参加登録({u2, u3});
+		)
+);
+
+public test4 : () ==> EventManager`「ユーザID」
+test4() == (
+	def u2 : EventManager`「ユーザID」 = 2;
+	    u3 : EventManager`「ユーザID」 = 3
+		in (
+			manager.ユーザ登録(u2);
+			manager.ユーザ登録(u3);
+			return manager.参加登録({u2, u3});
+		)
+);
+
+functions
+-- TODO Define functiones here
+
+traces
+-- TODO Define Combinatorial Test Traces here
+
+end EventManagerTest

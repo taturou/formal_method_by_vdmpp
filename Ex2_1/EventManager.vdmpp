@@ -1,0 +1,58 @@
+class EventManager
+types
+-- TODO Define types here
+public 「ユーザID」 = nat;
+
+values
+-- TODO Define values here
+
+instance variables
+-- 参加登録済みのユーザの集合
+private 参加登録済みユーザ : set of 「ユーザID」 := {}; 
+
+-- イベントの最大定員
+private 最大定員 : nat;
+
+inv card 参加登録済みユーザ <= 最大定員;
+
+operations
+-- コンストラクタ
+public EventManager : nat ==> EventManager
+EventManager(cap) == (
+	最大定員 := cap;
+);
+
+-- イベントにユーザを登録する操作
+public ユーザ登録 : 「ユーザID」 ==> ()
+ユーザ登録(user) == (
+	参加登録済みユーザ := 参加登録済みユーザ union {user}
+)
+pre card 参加登録済みユーザ < 最大定員
+		and
+		user not in set 参加登録済みユーザ;
+
+-- イベントに対して参加登録する操作
+public 参加登録 : set of 「ユーザID」 ==> 「ユーザID」
+参加登録(users) == (
+	let user in set users be st user not in set 参加登録済みユーザ
+		in (
+			ユーザ登録(user);
+			return user;
+		)
+)
+pre card 参加登録済みユーザ < 最大定員
+		and
+		exists user in set users & user not in set 参加登録済みユーザ
+post 参加登録済みユーザ = 参加登録済みユーザ~ union {RESULT}
+		and
+		RESULT in set users
+		and
+		RESULT not in set 参加登録済みユーザ~;
+
+functions
+-- TODO Define functiones here
+
+traces
+-- TODO Define Combinatorial Test Traces here
+
+end EventManager
