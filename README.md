@@ -1,2 +1,4 @@
-# formal_method_by_vdmpp
-VDM++による形式仕様記述
+# VDM++による形式仕様記述
+
+[練習問題 4.1](Ex4_1)
+
