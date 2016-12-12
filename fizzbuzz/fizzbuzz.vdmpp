@@ -1,0 +1,23 @@
+class fizzbuzz
+types
+
+values
+
+instance variables
+
+operations
+-- fizzbuzzを表示する
+public static p : nat ==> nat | seq of char
+	p(n) == 
+	(
+		if n mod 3 = 0 and n mod 5 = 0 then return "FizzBuzz"
+		elseif n mod 3 = 0 then return "Fizz"
+		elseif n mod 5 = 0 then return "Buzz"
+		else return n
+	);
+
+functions
+
+traces
+
+end fizzbuzz

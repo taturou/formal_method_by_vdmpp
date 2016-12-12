@@ -1,0 +1,28 @@
+class fizzbuzzTest
+types
+
+values
+
+instance variables
+
+operations
+public test1 : () ==> ()
+	test1() ==
+	(
+		for i = 0 to 50 by 1 do
+		(
+			IO`println(  fizzbuzz`p(i)   )
+		)
+	);
+
+public main : () ==> ()
+	main() ==
+	(
+		test1();
+	);
+
+functions
+
+traces
+
+end fizzbuzzTest
