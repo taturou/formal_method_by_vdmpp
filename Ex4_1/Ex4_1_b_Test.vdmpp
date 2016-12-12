@@ -1,0 +1,28 @@
+class Ex4_1_b_Test
+types
+
+values
+
+instance variables
+
+operations
+public test1 : () ==> ()
+	test1() ==
+	(
+		for i = 0 to 105 by 1 do
+		(
+			IO`println( Ex4_1_b`calculate(i mod 3, i mod 5, i mod 7) )
+		)
+	);
+
+public main : () ==> ()
+	main() ==
+	(
+		test1();
+	);
+
+functions
+
+traces
+
+end Ex4_1_b_Test

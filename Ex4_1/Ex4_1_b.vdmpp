@@ -1,0 +1,23 @@
+class Ex4_1_b
+types
+
+values
+
+instance variables
+
+functions
+-- 百五減算
+public calculate : nat * nat * nat -> nat
+calculate(a, b, c) == 
+  (70 * a + 21 * b + 15 * c) mod 105
+pre
+  a < 3
+  and b < 5
+  and c < 7
+post
+  RESULT < 105
+  and RESULT mod 3 = a
+  and RESULT mod 5 = b
+  and RESULT mod 7 = c
+
+end Ex4_1_b

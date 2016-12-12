@@ -51,7 +51,7 @@ VDM++‚ÌƒR[ƒh‚ðÝŒv‘‚Æ‚µ‚Äl‚¦‚½‚Æ‚«A‚Ç‚¤‚¢‚¤î•ñ‚ðŽc‚µ‚½‚¢‚©‚É‚æ‚Á‚ÄŒˆ’è‚Å‚«‚
 ```vdm
 public calculate: nat * nat * nat -> nat
 calculate(a, b, c) ==
-  return (70 * a + 21 * b + 15 * c) mod 105
+  (70 * a + 21 * b + 15 * c) mod 105
 pre
   a < 3
   and b < 5
