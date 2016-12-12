@@ -1,0 +1,26 @@
+class BankAccountTest
+types
+-- TODO Define types here
+
+values
+-- TODO Define values here
+
+instance variables
+account : BankAccount := new BankAccount();
+
+operations
+public test1 : () ==> ()
+test1() == (
+	account.預け入れ(100);
+	account.引き出し(50);
+	account.引き出し(50);
+	account.引き出し(50);
+);
+
+functions
+-- TODO Define functiones here
+
+traces
+-- TODO Define Combinatorial Test Traces here
+
+end BankAccountTest

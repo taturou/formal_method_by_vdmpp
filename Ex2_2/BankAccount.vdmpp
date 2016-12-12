@@ -1,0 +1,34 @@
+class BankAccount
+types
+-- TODO Define types here
+
+values
+-- TODO Define values here
+
+instance variables
+private 口座番号 : nat := 0;
+private 預金残高 : nat := 0;
+
+operations
+-- 引き出し
+public 引き出し : nat ==> ()
+引き出し(a) == (
+	預金残高 := 預金残高 - a;
+)
+pre 預金残高 >= a
+post 預金残高 + a = 預金残高~;
+
+-- 預け入れ
+public 預け入れ : nat ==> ()
+預け入れ(a) == (
+	預金残高 := 預金残高 + a;
+)
+post 預金残高 - a = 預金残高~;
+
+functions
+-- TODO Define functiones here
+
+traces
+-- TODO Define Combinatorial Test Traces here
+
+end BankAccount
